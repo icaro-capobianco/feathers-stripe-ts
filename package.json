@@ -1,0 +1,39 @@
+{
+	"name": "feathers-stripe-ts",
+	"version": "1.0.0",
+	"description": "A Feathers service for Stripe, typescripted",
+	"main": "es5/index.js",
+	"module": "es6/index.js",
+	"source": "src/index.ts",
+	"types": "types/index.d.ts",
+	"require": "es5/index.js",
+	"import": "es6/index.js",
+	"scripts": {
+		"watch-es5": "tsc -p tsconfig.json --target es5 --outDir es5 --module commonjs --watch",
+		"watch-es6": "tsc -p tsconfig.json --target es6 --outDir es6 --module es6 --watch",
+		"watch-types": "tsc -p tsconfig.json --watch --declarationDir types --emitDeclarationOnly",
+		"watch": "concurrently -n w: npm:watch-*",
+		"dev": "concurrently -n w: npm:watch-*"
+	},
+	"keywords": [
+		"stripe",
+		"feathers",
+		"feathers-plugin",
+		"typescript"
+	],
+	"license": "MIT",
+	"peerDependencies": {
+		"stripe": "^8.174.0"
+	},
+	"dependencies": {
+		"@feathersjs/errors": "^4.5.11",
+		"debug": "^4.3.2"
+	},
+	"devDependencies": {
+		"@feathersjs/express": "^4.5.11",
+		"@feathersjs/feathers": "^4.5.11",
+		"@feathersjs/socketio": "^4.5.11",
+		"concurrently": "^6.2.1",
+		"stripe": "^8.161.0"
+	}
+}
